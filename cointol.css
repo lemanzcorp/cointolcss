@@ -1,28 +1,31 @@
 /* header */
 
-/* --- Header glass abu2 tanpa menyentuh SVG --- */
+/* --- Header glass abu2 tanpa mempengaruhi tombol --- */
 nav.backnavbar {
   position: fixed !important;
   top: 0; left: 0; right: 0;
   width: 100% !important;
   z-index: 9999;
 
+  /* abu-abu semi-transparan + blur */
   background: rgba(80,80,80,0.45) !important;
   -webkit-backdrop-filter: blur(10px) saturate(120%);
   backdrop-filter: blur(10px) saturate(120%);
 
+  /* hilangkan garis/stroke putih bawah */
   border-bottom: none !important;
   box-shadow: none !important;
 
   transition: background .18s ease, box-shadow .18s ease;
 }
 
+/* saat scroll jadi lebih pekat (opsional) */
 nav.backnavbar.backnavbar-scrolled {
   background: rgba(30,30,30,0.78) !important;
   box-shadow: 0 6px 20px rgba(0,0,0,0.12) !important;
 }
 
-/* teks & tombol */
+/* warna teks / link / ikon — tapi JANGAN set background pada semua anak */
 nav.backnavbar .nav-link,
 nav.backnavbar .navbar-brand,
 nav.backnavbar .create_account,
@@ -33,6 +36,18 @@ nav.backnavbar .navbar-toggler {
   color: #fff !important;
 }
 
+/* SVG icons: gunakan currentColor untuk stroke/fill (ikuti warna teks) */
+nav.backnavbar svg { color: inherit; }
+nav.backnavbar svg path,
+nav.backnavbar svg circle,
+nav.backnavbar svg rect,
+nav.backnavbar svg polygon {
+  stroke: currentColor !important;
+  fill: currentColor !important;
+}
+
+/* JANGAN set background:transparent ke semua anak — biarkan tombol punya background sendiri.
+   Kalau ada tombol yang terlanjur jadi transparan, berikan back default ringan supaya kontras */
 nav.backnavbar .searchnav,
 nav.backnavbar .searchnavmobile {
   background-color: rgba(255,255,255,0.06);
@@ -40,14 +55,14 @@ nav.backnavbar .searchnavmobile {
   border-radius: 6px;
 }
 
-/* menu mobile expand */
+/* mobile expanded menu tetap readable */
 nav.backnavbar .navbar-collapse.show {
   background: rgba(12,12,12,0.92) !important;
   -webkit-backdrop-filter: blur(12px) !important;
   backdrop-filter: blur(12px) !important;
 }
 
-/* hilangkan border bawah dari semua anak */
+/* pastikan tidak ada border bawah putih dari elemen anak */
 nav.backnavbar * { border-bottom-color: transparent !important; }
 
 /* fokus aksesibilitas */
@@ -57,7 +72,31 @@ nav.backnavbar a:focus, nav.backnavbar button:focus {
 }
 
 
+/* popular */
+svg.tatorpop > path {
+  fill: none !important;
+}
 
+svg.tatorpop {
+  display: block;
+  width: 100%;
+  height: auto;
+
+  background: linear-gradient(
+    135deg, 
+    rgba(230, 0, 18, 0.7),  /* merah #e60012 dengan 20% opacity */
+    rgba(122, 0, 0, 0.7)    /* merah tua #7a0000 dengan 20% opacity */
+  );
+
+  clip-path: polygon(
+    0 60%,   /* kiri lebih ke bawah */
+    100% 20%,/* kanan lebih ke atas → bikin miring */
+    100% 100%,
+    0% 100%
+  );
+
+  border-radius: 8px;
+}
 
 /* semua */
 .clipgame,
@@ -65,8 +104,4 @@ nav.backnavbar a:focus, nav.backnavbar button:focus {
   display: none !important;
 }
 
-/* background slider */
-.banner-home {
-  background: linear-gradient(to right, #852d9e 0%, #4562c8 100%);
-}
 
