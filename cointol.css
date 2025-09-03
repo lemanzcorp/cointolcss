@@ -25,7 +25,7 @@ nav.backnavbar.backnavbar-scrolled {
   box-shadow: 0 6px 20px rgba(0,0,0,0.12) !important;
 }
 
-/* warna teks / link — jangan override SVG detail */
+/* warna teks / link */
 nav.backnavbar .nav-link,
 nav.backnavbar .navbar-brand,
 nav.backnavbar .create_account,
@@ -34,11 +34,6 @@ nav.backnavbar .searchnav,
 nav.backnavbar .searchnavmobile,
 nav.backnavbar .navbar-toggler {
   color: #fff !important;
-}
-
-/* biarkan SVG asli tetap stroke/fill bawaan */
-nav.backnavbar svg {
-  color: inherit; /* opsional, hanya untuk wrapper, jangan override path/circle */
 }
 
 /* tombol tetap punya background sendiri */
@@ -64,6 +59,8 @@ nav.backnavbar a:focus, nav.backnavbar button:focus {
   outline: 2px solid rgba(255,255,255,0.12);
   outline-offset: 2px;
 }
+
+/* ⚠ NOTE: jangan ubah stroke/fill SVG agar detail tidak hilang */
 
 
 
