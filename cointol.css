@@ -1,6 +1,6 @@
 /* header */
 
-/* --- Header glass abu2 tanpa mempengaruhi tombol --- */
+/* --- Header glass abu2 tanpa mempengaruhi tombol & SVG detail --- */
 nav.backnavbar {
   position: fixed !important;
   top: 0; left: 0; right: 0;
@@ -25,7 +25,7 @@ nav.backnavbar.backnavbar-scrolled {
   box-shadow: 0 6px 20px rgba(0,0,0,0.12) !important;
 }
 
-/* warna teks / link / ikon — tapi JANGAN set background pada semua anak */
+/* warna teks / link — jangan override SVG detail */
 nav.backnavbar .nav-link,
 nav.backnavbar .navbar-brand,
 nav.backnavbar .create_account,
@@ -36,18 +36,12 @@ nav.backnavbar .navbar-toggler {
   color: #fff !important;
 }
 
-/* SVG icons: gunakan currentColor untuk stroke/fill (ikuti warna teks) */
-nav.backnavbar svg { color: inherit; }
-nav.backnavbar svg path,
-nav.backnavbar svg circle,
-nav.backnavbar svg rect,
-nav.backnavbar svg polygon {
-  stroke: currentColor !important;
-  fill: currentColor !important;
+/* biarkan SVG asli tetap stroke/fill bawaan */
+nav.backnavbar svg {
+  color: inherit; /* opsional, hanya untuk wrapper, jangan override path/circle */
 }
 
-/* JANGAN set background:transparent ke semua anak — biarkan tombol punya background sendiri.
-   Kalau ada tombol yang terlanjur jadi transparan, berikan back default ringan supaya kontras */
+/* tombol tetap punya background sendiri */
 nav.backnavbar .searchnav,
 nav.backnavbar .searchnavmobile {
   background-color: rgba(255,255,255,0.06);
@@ -70,6 +64,7 @@ nav.backnavbar a:focus, nav.backnavbar button:focus {
   outline: 2px solid rgba(255,255,255,0.12);
   outline-offset: 2px;
 }
+
 
 
 /* popular */
