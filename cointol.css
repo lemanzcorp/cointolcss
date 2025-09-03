@@ -1,31 +1,28 @@
 /* header */
 
-/* --- Header glass abu2 tanpa mempengaruhi tombol & SVG detail --- */
+/* --- Header glass abu2 tanpa menyentuh SVG --- */
 nav.backnavbar {
   position: fixed !important;
   top: 0; left: 0; right: 0;
   width: 100% !important;
   z-index: 9999;
 
-  /* abu-abu semi-transparan + blur */
   background: rgba(80,80,80,0.45) !important;
   -webkit-backdrop-filter: blur(10px) saturate(120%);
   backdrop-filter: blur(10px) saturate(120%);
 
-  /* hilangkan garis/stroke putih bawah */
   border-bottom: none !important;
   box-shadow: none !important;
 
   transition: background .18s ease, box-shadow .18s ease;
 }
 
-/* saat scroll jadi lebih pekat (opsional) */
 nav.backnavbar.backnavbar-scrolled {
   background: rgba(30,30,30,0.78) !important;
   box-shadow: 0 6px 20px rgba(0,0,0,0.12) !important;
 }
 
-/* warna teks / link */
+/* teks & tombol */
 nav.backnavbar .nav-link,
 nav.backnavbar .navbar-brand,
 nav.backnavbar .create_account,
@@ -36,7 +33,6 @@ nav.backnavbar .navbar-toggler {
   color: #fff !important;
 }
 
-/* tombol tetap punya background sendiri */
 nav.backnavbar .searchnav,
 nav.backnavbar .searchnavmobile {
   background-color: rgba(255,255,255,0.06);
@@ -44,14 +40,14 @@ nav.backnavbar .searchnavmobile {
   border-radius: 6px;
 }
 
-/* mobile expanded menu tetap readable */
+/* menu mobile expand */
 nav.backnavbar .navbar-collapse.show {
   background: rgba(12,12,12,0.92) !important;
   -webkit-backdrop-filter: blur(12px) !important;
   backdrop-filter: blur(12px) !important;
 }
 
-/* pastikan tidak ada border bawah putih dari elemen anak */
+/* hilangkan border bawah dari semua anak */
 nav.backnavbar * { border-bottom-color: transparent !important; }
 
 /* fokus aksesibilitas */
@@ -59,9 +55,6 @@ nav.backnavbar a:focus, nav.backnavbar button:focus {
   outline: 2px solid rgba(255,255,255,0.12);
   outline-offset: 2px;
 }
-
-/* ⚠ NOTE: jangan ubah stroke/fill SVG agar detail tidak hilang */
-
 
 
 /* popular */
