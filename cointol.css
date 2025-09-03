@@ -57,31 +57,7 @@ nav.backnavbar a:focus, nav.backnavbar button:focus {
 }
 
 
-/* popular */
-svg.tatorpop > path {
-  fill: none !important;
-}
 
-svg.tatorpop {
-  display: block;
-  width: 100%;
-  height: auto;
-
-  background: linear-gradient(
-    135deg, 
-    rgba(230, 0, 18, 0.7),  /* merah #e60012 dengan 20% opacity */
-    rgba(122, 0, 0, 0.7)    /* merah tua #7a0000 dengan 20% opacity */
-  );
-
-  clip-path: polygon(
-    0 60%,   /* kiri lebih ke bawah */
-    100% 20%,/* kanan lebih ke atas → bikin miring */
-    100% 100%,
-    0% 100%
-  );
-
-  border-radius: 8px;
-}
 
 /* semua */
 .clipgame,
